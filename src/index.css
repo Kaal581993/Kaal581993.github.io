@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+:root {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  color: #00eaff;
+  background: #050707;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --green: #00fff2;
+  --green-soft: #93f7ae;
+  --green-mid: #008f8d;
+  --aqua: #00ffff;
+  --ink: #050707;
+  --line: rgba(45, 131, 131, 0.28);
+}
+
+* { box-sizing: border-box; }
+html { min-width: 320px; min-height: 100%; background: var(--ink); }
+body { min-width: 320px; min-height: 100vh; margin: 0; }
+button, input { font: inherit; }
+button { color: inherit; }
+a { color: inherit; }
+::selection { color: #001b07; background: var(--green); }
+:focus-visible { outline: 1px solid var(--aqua); outline-offset: 4px; }
+#root { min-height: 100vh; }

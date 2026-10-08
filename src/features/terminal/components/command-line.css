@@ -1,0 +1,55 @@
+.command-line {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 9px;
+  border-top: 1px solid rgba(67, 123, 77, 0.2);
+}
+
+.command-prompt {
+  flex: 0 0 auto;
+  color: #00ffff;
+  font-size: 10px;
+}
+
+.command-input-wrap {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+.command-input {
+  width: 100%;
+  min-width: 0;
+  padding: 6px 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #93f7ae;
+  caret-color: transparent;
+  font: inherit;
+  font-size: 11px;
+}
+
+.command-input:focus-visible { outline: 0; }
+.command-input:disabled { opacity: 0.55; }
+.command-run { display: grid; width: 30px; height: 28px; flex: 0 0 auto; place-items: center; border: 1px solid rgba(74, 141, 88, .3); background: transparent; color: #00ffff; cursor: pointer; font-size: 15px; }
+.command-run:hover:not(:disabled) { border-color: #00ff41; color: #00ff41; }
+.command-run:disabled { cursor: default; opacity: .35; }
+
+.command-cursor {
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  height: 17px;
+  background: #00ffee;
+  box-shadow: 0 0 11px rgba(0, 255, 251, 0.7);
+  pointer-events: none;
+  animation: command-cursor-blink 0.9s steps(2, start) infinite;
+  transform: translateY(-50%);
+}
+
+.command-line { position: relative; }
+
+@keyframes command-cursor-blink { to { visibility: hidden; } }

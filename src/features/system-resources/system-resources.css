@@ -1,0 +1,20 @@
+.resource-console { color: #9ab59f; font-size: 10px; }
+.resource-status { display: flex; align-items: center; gap: 8px; padding-bottom: 15px; border-bottom: 1px solid rgba(74, 141, 88, .24); color: #789680; font-size: 9px; }
+.resource-status > span:last-child { margin-left: auto; color: #00ffff; font-variant-numeric: tabular-nums; }
+.resource-live-dot { width: 6px; height: 6px; border-radius: 50%; background: #00ff41; box-shadow: 0 0 9px #00ff41; }
+.resource-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 16px; }
+.resource-metric { display: grid; min-height: 100px; align-content: start; gap: 10px; padding: 14px; border: 1px solid rgba(74, 141, 88, .24); background: rgba(0, 18, 7, .42); }
+.resource-metric > span { color: #64866c; font-size: 8px; }
+.resource-metric strong { color: #00ff41; font-size: 18px; font-weight: 400; }
+.resource-metric strong i { color: #64866c; font-size: 11px; font-style: normal; }
+.resource-metric small { color: #64816a; font-size: 8px; }
+.resource-metric-wide { grid-column: 1 / -1; }
+.resource-metric-wide strong { font-size: 14px; }
+.resource-meter { height: 4px; overflow: hidden; background: rgba(74, 141, 88, .2); }
+.resource-meter span { display: block; height: 100%; background: #00ff41; box-shadow: 0 0 8px #00ff41; transition: width 250ms ease; }
+.resource-note { margin: 15px 0 0; color: #64816a; font-size: 9px; line-height: 1.7; }
+
+@media (max-width: 460px) {
+  .resource-metrics { grid-template-columns: 1fr; }
+  .resource-metric-wide { grid-column: auto; }
+}

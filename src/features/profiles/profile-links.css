@@ -1,0 +1,8 @@
+.profile-links { display: grid; grid-template-columns: minmax(0, 1fr); gap: 7px; margin-top: 14px; }
+.profile-link { display: flex; min-width: 0; align-items: center; justify-content: space-between; gap: 6px; padding: 8px; border: 1px solid rgba(93, 148, 102, .24); color: #91ac97; text-decoration: none; }
+a.profile-link:hover { border-color: rgba(0, 255, 255, .56); color: #d5ffff; }
+.profile-link-copy { display: grid; min-width: 0; gap: 4px; }
+.profile-link strong { overflow: hidden; color: #d9f0df; font-size: 9px; font-weight: 400; text-overflow: ellipsis; white-space: nowrap; }
+.profile-link small { color: #8cae94; font-size: 8px; line-height: 1.45; overflow-wrap: anywhere; }
+.profile-link small.profile-updated { color: #64816a; font-size: 7px; }
+.profile-link-arrow { flex: 0 0 auto; color: #00ffff; font-size: 11px; }

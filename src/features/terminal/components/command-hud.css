@@ -1,0 +1,15 @@
+.command-hud-content { color: #9ab59f; font-size: 10px; }
+.command-hud-status { display: flex; align-items: center; gap: 8px; padding-bottom: 12px; border-bottom: 1px solid rgba(74, 141, 88, .26); color: #64866c; font-size: 8px; }
+.command-hud-status > span:first-child { width: 5px; height: 5px; border-radius: 50%; background: #00ff41; box-shadow: 0 0 8px #00ff41; }
+.command-hud-status > span:last-child { margin-left: auto; color: #00ffff; }
+.command-hud-lines { display: grid; gap: 12px; max-height: min(52dvh, 480px); overflow: auto; padding: 17px 2px; scrollbar-color: #22572e transparent; scrollbar-width: thin; }
+.command-hud-line { margin: 0; color: #b2c9b7; font-size: 10px; line-height: 1.85; overflow-wrap: anywhere; }
+.hud-output-accent { color: #00ff41; }
+.hud-output-muted { color: #718d77; }
+.hud-output-cyan { color: #00ffff; }
+.command-hud-line a { text-decoration-color: rgba(0, 255, 255, .4); text-underline-offset: 3px; }
+.command-hud-line a:hover { color: #d5ffff; }
+.command-hud-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(74, 141, 88, .24); color: #64816a; font-size: 8px; }
+.command-hud-footer button { border: 1px solid rgba(0, 255, 65, .36); padding: 8px 10px; background: transparent; color: #00ff41; cursor: pointer; font: inherit; }
+.command-hud-footer button:hover { background: rgba(0, 255, 65, .08); }
+.command-hud-footer button span { margin-left: 6px; color: #00ffff; }

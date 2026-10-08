@@ -1,0 +1,94 @@
+.portfolio-shell {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 42%, rgba(0, 54, 16, 0.18), transparent 48%), linear-gradient(135deg, #050707, #070a08 55%, #050909);
+  isolation: isolate;
+}
+
+.portfolio-shell::before {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  content: '';
+  opacity: 0.24;
+  background-image: linear-gradient(rgba(84, 153, 99, 0.075) 1px, transparent 1px), linear-gradient(90deg, rgba(84, 153, 99, 0.075) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, transparent, black 28%, black 80%, transparent);
+}
+
+.portfolio-shell::after {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  pointer-events: none;
+  content: '';
+  opacity: 0;
+  background: repeating-linear-gradient(to bottom, transparent 0 2px, rgba(0, 0, 0, 0.22) 3px 4px);
+  transition: opacity 180ms ease;
+}
+
+.scanlines-enabled::after { opacity: 0.34; }
+
+.site-header {
+  z-index: 2;
+  display: grid;
+  width: min(1450px, calc(100% - 72px));
+  height: 76px;
+  grid-template-columns: 1fr 1fr auto auto;
+  align-items: center;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(94, 139, 101, 0.18);
+  color: #89a993;
+  font-size: 9px;
+}
+
+.site-wordmark { display: inline-flex; width: fit-content; align-items: center; gap: 11px; color: #daeee0; font: 700 12px 'Space Grotesk', sans-serif; text-decoration: none; }
+.site-mark { display: grid; width: 28px; height: 28px; place-items: center; border: 1px solid var(--green-mid); color: var(--green); font: 500 12px 'DM Mono', monospace; text-shadow: 0 0 12px rgba(0, 255, 65, 0.45); }
+.availability-status { display: flex; align-items: center; justify-content: center; gap: 9px; white-space: nowrap; }
+.availability-status span { width: 5px; height: 5px; border-radius: 50%; background: var(--green); box-shadow: 0 0 11px var(--green); animation: status-pulse 2.2s ease-in-out infinite; }
+.sound-toggle, .scanline-toggle { justify-self: end; padding: 8px 0 8px 10px; border: 0; background: transparent; color: #91a999; cursor: pointer; font-size: 9px; }
+.sound-toggle:hover { color: var(--aqua); }
+.sound-toggle span { margin-right: 5px; color: var(--aqua); font-size: 12px; }
+.sound-toggle b { margin-left: 6px; color: var(--green); font-weight: 400; }
+.scanline-toggle { justify-self: end; padding: 8px 0 8px 10px; border: 0; background: transparent; color: #91a999; cursor: pointer; font-size: 9px; }
+.scanline-toggle:hover { color: var(--green); }
+.scanline-toggle span { margin-right: 7px; color: var(--aqua); font-size: 12px; }
+.scanline-toggle b { margin-left: 8px; color: var(--green); font-weight: 400; }
+
+.portfolio-desktop { position: relative; z-index: 1; display: flex; width: min(1450px, calc(100% - 72px)); flex: 1; flex-direction: column; justify-content: center; margin: 0 auto; padding: 36px 0 24px; }
+.desktop-meta, .desktop-footer { display: flex; align-items: center; justify-content: space-between; color: #5d7d64; font-size: 9px; }
+.desktop-meta { margin-bottom: 13px; }
+.desktop-meta i { margin-right: 10px; color: var(--aqua); font-style: normal; }
+.desktop-footer { margin-top: 13px; }
+.desktop-footer b { color: var(--green); font-weight: 400; }
+.desktop-footer i { margin-left: 5px; color: var(--aqua); font-size: 8px; font-style: normal; }
+
+@keyframes status-pulse { 50% { opacity: 0.42; box-shadow: 0 0 3px var(--green); } }
+
+@media (max-width: 820px) {
+  .site-header, .portfolio-desktop { width: min(100% - 34px, 680px); }
+  .site-header { height: 64px; grid-template-columns: 1fr auto auto; }
+  .availability-status, .desktop-meta > span:last-child { display: none; }
+  .portfolio-desktop { justify-content: flex-start; padding-top: 23px; }
+  .desktop-footer { font-size: 8px; }
+  .desktop-footer > span:first-child { display: none; }
+}
+
+@media (max-width: 460px) {
+  .site-header, .portfolio-desktop { width: calc(100% - 24px); }
+  .site-wordmark { gap: 8px; font-size: 10px; }
+  .site-mark { width: 25px; height: 25px; }
+  .scanline-toggle, .sound-toggle { padding-left: 5px; font-size: 8px; }
+  .sound-toggle span { margin-right: 3px; }
+  .portfolio-desktop { padding-top: 17px; }
+  .desktop-meta { font-size: 8px; }
+  .desktop-footer { font-size: 7px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-shell *, .portfolio-shell *::before, .portfolio-shell *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+}

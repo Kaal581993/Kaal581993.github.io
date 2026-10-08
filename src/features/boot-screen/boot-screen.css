@@ -1,0 +1,42 @@
+.boot-screen {
+  position: fixed;
+  z-index: 80;
+  inset: 0;
+  display: grid;
+  padding: 24px;
+  place-items: center;
+  background: #030605;
+  color: #9ab59f;
+  font: 11px/1.7 'DM Mono', 'Courier New', monospace;
+  transition: opacity 480ms ease, visibility 480ms ease;
+}
+
+.boot-screen-ready { pointer-events: none; visibility: hidden; opacity: 0; }
+.boot-console { width: min(780px, 100%); }
+.boot-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; color: #73917a; font-size: 9px; }
+.boot-mark { color: #00ff41; }
+.boot-lines { max-height: min(620px, calc(100dvh - 220px)); min-height: 245px; overflow: auto; overflow-wrap: anywhere; scrollbar-color: #22572e transparent; scrollbar-width: thin; }
+.boot-lines p { margin: 0 0 8px; animation: boot-line-in 170ms ease-out both; }
+.boot-current { color: #00ffff; }
+.boot-current .boot-spinner { display: inline-block; width: 8px; height: 8px; margin-right: 8px; border: 1px solid #00ff41; border-right-color: transparent; border-radius: 50%; vertical-align: -1px; animation: boot-spin .8s linear infinite; }
+.boot-cursor { margin-left: 3px; color: #00ff41; animation: boot-blink .8s steps(2, start) infinite; }
+.boot-complete { color: #00ff41; }
+.boot-progress-track { height: 2px; margin-top: 24px; background: rgba(75, 120, 83, .24); }
+.boot-progress-track span { display: block; height: 100%; background: #00ff41; box-shadow: 0 0 12px #00ff41; transition: width 220ms ease; }
+.boot-footer { display: flex; justify-content: space-between; margin-top: 12px; color: #58745f; font-size: 8px; }
+.boot-footer button { border: 0; background: none; color: #00ffff; cursor: pointer; font-size: 8px; }
+.boot-footer button:hover { color: #d5ffff; }
+
+@keyframes boot-line-in { from { transform: translateY(3px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes boot-spin { to { transform: rotate(360deg); } }
+@keyframes boot-blink { to { visibility: hidden; } }
+
+@media (max-width: 520px) {
+  .boot-screen { padding: 18px; font-size: 9px; }
+  .boot-brand { font-size: 8px; }
+  .boot-lines { max-height: 62dvh; min-height: 245px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boot-screen, .boot-screen * { transition-duration: 0.01ms; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+}

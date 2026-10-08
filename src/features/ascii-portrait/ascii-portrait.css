@@ -1,0 +1,68 @@
+.ascii-portrait-frame {
+  position: relative;
+  display: grid;
+  min-height: 310px;
+  flex: 1;
+  place-items: center;
+  overflow: hidden;
+  margin: 16px 0 18px;
+  border-block: 1px solid rgba(72, 129, 131, 0.683);
+}
+
+.ascii-portrait-frame::before,
+.ascii-portrait-frame::after {
+  position: absolute;
+  z-index: 1;
+  width: 18px;
+  height: 18px;
+  content: '';
+}
+
+.ascii-portrait-frame::before {
+  top: 0;
+  left: 0;
+  border-top: 1px solid #05c0c0;
+  border-left: 1px solid #05c0c0;
+}
+
+.ascii-portrait-frame::after {
+  right: 0;
+  bottom: 0;
+  border-right: 1px solid #05c0c0;
+  border-bottom: 1px solid #05c0c0;
+}
+
+.ascii-portrait-canvas {
+  display: block;
+  /* Previous width caps: desktop 388.5px; tablet 273px. */
+  width: min(100%, 396.27px);
+  max-height: 440px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 7px rgba(88, 245, 255, 0.75));
+}
+
+.ascii-portrait-scan {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  width: 90%;
+  height: 1px;
+  background: rgba(0, 255, 255, 0.4);
+  box-shadow: 0 0 14px rgba(0, 255, 255, 0.35);
+  opacity: 0.38;
+  animation: portrait-sweep 6.5s linear infinite;
+}
+
+@keyframes portrait-sweep {
+  to { transform: translateY(220px); }
+}
+
+@media (max-width: 820px) {
+  .ascii-portrait-frame { min-height: 235px; max-height: 290px; margin: 12px 0; }
+  .ascii-portrait-canvas { width: min(100%, 278.46px); max-height: 250px; }
+}
+
+@media (max-width: 460px) {
+  .ascii-portrait-frame { min-height: 205px; }
+  .ascii-portrait-canvas { max-height: 220px; }
+}
