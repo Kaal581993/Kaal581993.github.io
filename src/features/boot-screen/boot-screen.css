@@ -7,7 +7,7 @@
   place-items: center;
   background: #030605;
   color: #9ab59f;
-  font: 11px/1.7 'DM Mono', 'Courier New', monospace;
+  font: 400 11px/1.9 'Silkscreen', 'Courier New', monospace;
   transition: opacity 480ms ease, visibility 480ms ease;
 }
 

@@ -3,7 +3,7 @@
 .contact-recipient strong { color: #00ff41; font-size: 11px; font-weight: 400; overflow-wrap: anywhere; }
 .contact-recipient span { color: #64816a; font-size: 8px; }
 .contact-form > label:not(.contact-honeypot) { display: grid; gap: 7px; color: #81a38a; font-size: 8px; }
-.contact-form input:not([tabindex='-1']), .contact-form textarea { width: 100%; border: 1px solid rgba(74, 141, 88, .35); border-radius: 0; padding: 10px 11px; outline: 0; background: #050a06; color: #d0e7d6; font: 10px/1.5 'DM Mono', monospace; resize: vertical; }
+.contact-form input:not([tabindex='-1']), .contact-form textarea { width: 100%; border: 1px solid rgba(74, 141, 88, .35); border-radius: 0; padding: 10px 11px; outline: 0; background: #050a06; color: #d0e7d6; font: 400 10px/1.8 'Silkscreen', 'Courier New', monospace; resize: vertical; }
 .contact-form input:focus, .contact-form textarea:focus { border-color: #00ffff; box-shadow: 0 0 0 1px rgba(0, 255, 255, .18); }
 .contact-form input::placeholder, .contact-form textarea::placeholder { color: #526c57; }
 .contact-form textarea { min-height: 125px; }
@@ -16,7 +16,7 @@
 .contact-error { margin: 0; color: #ff8178; font-size: 9px; line-height: 1.6; }
 .contact-result { display: grid; justify-items: start; gap: 12px; color: #91ac97; font-size: 10px; line-height: 1.7; }
 .contact-result-mark { color: #00ff41; }
-.contact-result h3 { margin: 0; color: #d9f0df; font: 600 18px 'Space Grotesk', sans-serif; }
+.contact-result h3 { margin: 0; color: #d9f0df; font: 700 18px/1.5 'Silkscreen', 'Courier New', monospace; }
 .contact-result p { margin: 0; overflow-wrap: anywhere; }
 .contact-result .contact-submit { margin-top: 5px; }
 .contact-honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }

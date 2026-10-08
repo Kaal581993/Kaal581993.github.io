@@ -46,8 +46,8 @@
   font-size: 9px;
 }
 
-.site-wordmark { display: inline-flex; width: fit-content; align-items: center; gap: 11px; color: #daeee0; font: 700 12px 'Space Grotesk', sans-serif; text-decoration: none; }
-.site-mark { display: grid; width: 28px; height: 28px; place-items: center; border: 1px solid var(--green-mid); color: var(--green); font: 500 12px 'DM Mono', monospace; text-shadow: 0 0 12px rgba(0, 255, 65, 0.45); }
+.site-wordmark { display: inline-flex; width: fit-content; align-items: center; gap: 11px; color: #daeee0; font: 700 12px/1.6 'Silkscreen', 'Courier New', monospace; text-decoration: none; }
+.site-mark { display: grid; width: 28px; height: 28px; place-items: center; border: 1px solid var(--green-mid); color: var(--green); font: 400 12px 'Silkscreen', 'Courier New', monospace; text-shadow: 0 0 12px rgba(0, 255, 65, 0.45); }
 .availability-status { display: flex; align-items: center; justify-content: center; gap: 9px; white-space: nowrap; }
 .availability-status span { width: 5px; height: 5px; border-radius: 50%; background: var(--green); box-shadow: 0 0 11px var(--green); animation: status-pulse 2.2s ease-in-out infinite; }
 .sound-toggle, .scanline-toggle { justify-self: end; padding: 8px 0 8px 10px; border: 0; background: transparent; color: #91a999; cursor: pointer; font-size: 9px; }

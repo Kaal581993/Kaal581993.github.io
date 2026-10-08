@@ -54,7 +54,7 @@
 .portrait-caption strong { color: #93f7ae; font-weight: 400; }
 .portrait-caption-status { color: #00ffff; }
 .portrait-identity { display: flex; justify-content: space-between; align-items: end; margin-top: 17px; }
-.portrait-identity h1 { margin: 0; color: #d9f0df; font: 600 23px/1.1 'Space Grotesk', sans-serif; }
+.portrait-identity h1 { margin: 0; color: #d9f0df; font: 700 23px/1.6 'Silkscreen', 'Courier New', monospace; }
 .portrait-identity p { margin: 7px 0 0; color: #77927d; font-size: 9px; }
 .portrait-identity p span { color: #00ffff; }
 .portrait-identity-index { color: #00ff41; font-size: 10px; }
