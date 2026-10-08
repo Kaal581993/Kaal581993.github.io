@@ -8,11 +8,11 @@
 
 .professional-profile-heading { max-width: 820px; }
 .professional-profile-index { color: #00ffff; font-size: 9px; }
-.professional-profile-heading h2 { margin: 10px 0 9px; color: #d9f0df; font: 700 23px/1.6 'Silkscreen', 'Courier New', monospace; }
+.professional-profile-heading h2 { margin: 10px 0 9px; color: #d9f0df; font: 500 23px/1.3 'DM Mono', 'Courier New', monospace; }
 .professional-profile-heading > p, .professional-markets > p { margin: 0; color: #8ca693; font-size: 10px; line-height: 1.8; }
 .professional-skill-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 36px; margin-top: 27px; border-top: 1px solid rgba(74, 141, 88, 0.2); }
 .professional-skill-group { padding: 17px 0; border-bottom: 1px solid rgba(74, 141, 88, 0.2); }
-.professional-skill-group h3, .professional-markets h3 { margin: 0 0 8px; color: #00ff41; font: 400 12px/1.8 'Silkscreen', 'Courier New', monospace; }
+.professional-skill-group h3, .professional-markets h3 { margin: 0 0 8px; color: #00ff41; font: 500 12px/1.5 'DM Mono', 'Courier New', monospace; }
 .professional-skill-group p { margin: 0; color: #9ab59f; font-size: 9px; line-height: 1.9; }
 .professional-markets { margin-top: 26px; }
 .professional-markets h3 { color: #00ffff; }

@@ -168,7 +168,7 @@ export const AsciiPortrait = ({ animate = false }: AsciiPortraitProps) => {
     canvas.width = width * ratio
     canvas.height = height * ratio
     context.scale(ratio, ratio)
-    context.font = `${fontSize}px "Silkscreen", "Courier New", monospace`
+    context.font = `${fontSize}px "DM Mono", "Courier New", monospace`
     context.textBaseline = 'top'
 
     let cancelled = false

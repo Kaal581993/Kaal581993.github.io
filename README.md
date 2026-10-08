@@ -15,12 +15,16 @@ npm run dev
 
 ## GitHub Pages deployment
 
-This repository deploys to `https://kaal581993.github.io/` using `.github/workflows/deploy-pages.yml`. Push commits to `main` to build the site and publish the `dist/` artifact. In GitHub, open **Settings → Pages** and choose **GitHub Actions** as the build and deployment source. After the workflow succeeds, check:
+This repository deploys to `https://kaal581993.github.io/` using `.github/workflows/deploy-pages.yml`. Push commits to `main` to build the site and publish the `dist/` artifact. In GitHub, open **Settings → Pages** and choose **GitHub Actions** as the build and deployment source. The repository must have only one Pages deployment workflow; the old generated Jekyll workflow was removed because it published the raw Vite source instead of `dist/`. After the workflow succeeds, check:
 
 - `https://kaal581993.github.io/robots.txt`
 - `https://kaal581993.github.io/sitemap.xml`
 
-The sitemap intentionally lists the single portfolio URL; remote service regions are not separate pages. For a future custom domain, update the workflow's `SITE_URL` and DNS/Pages custom-domain settings together.
+The sitemap intentionally lists the single portfolio URL; remote service regions are not separate pages.
+
+### Optional is-a.dev domain
+
+The proposed subdomain is `kaal581993.is-a.dev`. A ready-to-submit registry record is at `docs/is-a-dev-registration/kaal581993.json`. Submit that file in a pull request to `is-a-dev/register` under `domains/kaal581993.json`; a maintainer must approve and merge it. Do not switch the production canonical URL before registration is active. After approval, add `kaal581993.is-a.dev` as the custom domain in GitHub Pages, add `public/CNAME` containing that hostname, and change `SITE_URL` in the Pages workflow to `https://kaal581993.is-a.dev`. Keep HTTPS enforcement enabled after GitHub provisions the certificate.
 
 GitHub Pages hosts static files only. It will not run the Express SMTP API, so the portfolio's direct-email form requires a separate Node-capable host or serverless API deployment.
 

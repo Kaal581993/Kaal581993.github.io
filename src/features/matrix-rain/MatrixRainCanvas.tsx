@@ -32,7 +32,7 @@ export const MatrixRainCanvas = () => {
     const draw = () => {
       context.fillStyle = 'rgba(1, 7, 3, 0.09)'
       context.fillRect(0, 0, width, height)
-      context.font = `${fontSize}px "Silkscreen", "Courier New", monospace`
+      context.font = `${fontSize}px "DM Mono", "Courier New", monospace`
 
       drops.forEach((drop, column) => {
         if (column % 3 !== 0) return

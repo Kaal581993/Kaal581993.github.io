@@ -26,7 +26,7 @@ export const TerminalOutput = ({ entries, busy }: TerminalOutputProps) => {
     <div ref={outputRef} className="terminal-output" role="log" aria-live="polite" aria-relevant="additions text">
       <div className="terminal-boot-message">
         <span className="boot-title">KAALS OS <span>v. 2.6.10</span></span>
-        <span>Secure shell established. Welcome back, Viral.</span>
+        <span>Secure shell established. Welcome back to Vir'hul's portfolio.</span>
         <span className="boot-muted">Type <b>help</b> to inspect available commands.</span>
       </div>
       {entries.map((entry, entryIndex) => (
