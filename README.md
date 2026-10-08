@@ -13,6 +13,17 @@ npm run dev
 
 `npm run dev` runs Vite and the Node mail API together. Create a production build with `npm run build`, then launch the Node server with `npm start`. Run Oxlint with `npm run lint`.
 
+## GitHub Pages deployment
+
+This repository deploys to `https://kaal581993.github.io/` using `.github/workflows/deploy-pages.yml`. Push commits to `main` to build the site and publish the `dist/` artifact. In GitHub, open **Settings → Pages** and choose **GitHub Actions** as the build and deployment source. After the workflow succeeds, check:
+
+- `https://kaal581993.github.io/robots.txt`
+- `https://kaal581993.github.io/sitemap.xml`
+
+The sitemap intentionally lists the single portfolio URL; remote service regions are not separate pages. For a future custom domain, update the workflow's `SITE_URL` and DNS/Pages custom-domain settings together.
+
+GitHub Pages hosts static files only. It will not run the Express SMTP API, so the portfolio's direct-email form requires a separate Node-capable host or serverless API deployment.
+
 ## Search indexing and deployment domain
 
 Set `SITE_URL` in the production build environment to the site's public origin, with no path, for example `https://portfolio.example.com`. Then run `npm run build`. The build generates `dist/robots.txt` and `dist/sitemap.xml` with the configured domain and adds the matching canonical and Open Graph URL to the generated HTML. If `SITE_URL` is absent, the build warns and writes a reserved placeholder domain; do not deploy that output as-is.

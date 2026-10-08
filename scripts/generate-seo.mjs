@@ -7,7 +7,8 @@ config({ path: '.env.local' })
 const projectRoot = process.cwd()
 const publicDirectory = resolve(projectRoot, 'public')
 const distDirectory = resolve(projectRoot, 'dist')
-const rawSiteUrl = process.env.SITE_URL || process.env.VITE_SITE_URL
+const defaultSiteUrl = 'https://kaal581993.github.io'
+const rawSiteUrl = process.env.SITE_URL || process.env.VITE_SITE_URL || defaultSiteUrl
 const siteUrl = rawSiteUrl?.replace(/\/+$/, '')
 
 if (siteUrl) {
@@ -23,11 +24,12 @@ if (siteUrl) {
 }
 
 const sourceToken = '__SITE_URL__'
-const replacement = siteUrl || 'https://your-production-domain.example'
+const replacement = siteUrl
+const defaultUrl = defaultSiteUrl
 
 for (const fileName of ['robots.txt', 'sitemap.xml']) {
   const template = await readFile(resolve(publicDirectory, fileName), 'utf8')
-  await writeFile(resolve(distDirectory, fileName), template.replaceAll(sourceToken, replacement))
+  await writeFile(resolve(distDirectory, fileName), template.replaceAll(defaultUrl, replacement))
 }
 
 const htmlPath = resolve(distDirectory, 'index.html')
@@ -38,8 +40,4 @@ const withCanonical = html
   .replace('</head>', `    <meta property="og:url" content="${canonicalUrl}" />\n  </head>`)
 await writeFile(htmlPath, withCanonical)
 
-if (!siteUrl) {
-  console.warn('SITE_URL is unset; generated SEO URLs use a placeholder. Set SITE_URL before deploying.')
-} else {
-  console.log(`Generated sitemap, robots rules, and canonical metadata for ${siteUrl}`)
-}
+console.log(`Generated sitemap, robots rules, and canonical metadata for ${siteUrl}`)
