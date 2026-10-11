@@ -36,7 +36,7 @@
 .site-header {
   z-index: 2;
   display: grid;
-  width: min(1450px, calc(100% - 72px));
+  width: min(1450px, calc(100% - 42px));
   height: 76px;
   grid-template-columns: 1fr 1fr auto auto;
   align-items: center;
