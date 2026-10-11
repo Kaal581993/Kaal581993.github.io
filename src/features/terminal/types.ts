@@ -1,4 +1,4 @@
-export type OutputTone = 'default' | 'accent' | 'muted' | 'cyan'
+export type OutputTone = 'default' | 'accent' | 'muted' | 'cyan' | 'orange' | 'yellow' | 'amber' | 'coral'
 export type TerminalAction = 'contact' | 'services' | 'resources'
 
 export interface OutputSegment {

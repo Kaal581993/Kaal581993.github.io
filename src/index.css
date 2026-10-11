@@ -15,6 +15,15 @@
   --aqua: #00ffff;
   --ink: #050707;
   --line: rgba(45, 131, 131, 0.28);
+  /* Neon accent colors */
+  --neon-orange: #ff6b00;
+  --neon-orange-glow: #ff8c33;
+  --neon-yellow: #ffeb00;
+  --neon-yellow-glow: #fff266;
+  --neon-amber: #ffb800;
+  --neon-amber-glow: #ffcc44;
+  --neon-coral: #ff4444;
+  --neon-coral-glow: #ff7777;
 }
 
 * { box-sizing: border-box; }
@@ -26,3 +35,55 @@ a { color: inherit; }
 ::selection { color: #001b07; background: var(--green); }
 :focus-visible { outline: 1px solid var(--aqua); outline-offset: 4px; }
 #root { min-height: 100vh; }
+
+/* Document-style text formatting utilities */
+.doc-section { 
+  border-left: 2px solid var(--neon-orange); 
+  padding-left: 16px; 
+  margin: 24px 0; 
+  box-shadow: 0 0 20px rgba(255, 107, 0, 0.15);
+}
+.doc-section-title { 
+  color: var(--neon-orange); 
+  text-shadow: 0 0 8px var(--neon-orange-glow), 0 0 16px var(--neon-orange-glow);
+  font-weight: 500;
+  font-size: 1.1em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.doc-subsection-title { 
+  color: var(--neon-yellow); 
+  text-shadow: 0 0 6px var(--neon-yellow-glow), 0 0 12px var(--neon-yellow-glow);
+  font-weight: 500;
+  font-size: 1em;
+  margin: 16px 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.doc-body { 
+  color: #b2c9b7; 
+  line-height: 1.9; 
+  font-size: 12px; 
+}
+.doc-body strong { color: var(--green-soft); }
+.doc-body em { color: var(--aqua); font-style: italic; }
+.doc-list { margin: 8px 0 16px 24px; }
+.doc-list li { margin: 6px 0; color: #9cbba3; position: relative; }
+.doc-list li::before { content: '▸ '; color: var(--neon-amber); text-shadow: 0 0 6px var(--neon-amber-glow); }
+.doc-divider { 
+  border: none; 
+  height: 1px; 
+  background: linear-gradient(90deg, transparent, var(--neon-orange), var(--neon-yellow), transparent); 
+  margin: 20px 0;
+  box-shadow: 0 0 10px var(--neon-orange-glow);
+}
+.doc-highlight { 
+  background: linear-gradient(120deg, rgba(255, 107, 0, 0.15), rgba(255, 235, 0, 0.15)); 
+  border: 1px solid rgba(255, 107, 0, 0.3); 
+  border-radius: 4px; 
+  padding: 12px 16px; 
+  margin: 12px 0; 
+  box-shadow: inset 0 0 20px rgba(255, 107, 0, 0.1);
+}
+.doc-highlight-title { color: var(--neon-yellow); text-shadow: 0 0 8px var(--neon-yellow-glow); margin-bottom: 8px; }

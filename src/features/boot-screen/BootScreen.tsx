@@ -6,7 +6,7 @@ interface BootScreenProps {
 }
 
 const bootMessages = [
-  '[    0.000000] Linux version 6.8.0-matrix (viral@prajapati)',
+  '[    0.000000] Linux version 6.8.0-KAALOS (viral@prajapati)',
   '[    0.013482] Command line: BOOT_IMAGE=/vmlinuz root=/dev/mapper/system ro quiet',
   '[    0.047102] x86/fpu: Supporting XSAVE feature 0x001: x87 floating point registers',
   '[    0.083214] BIOS-provided physical RAM map detected',
@@ -84,7 +84,8 @@ export const BootScreen = ({ onComplete }: BootScreenProps) => {
   return (
     <section className={`boot-screen${isComplete ? ' boot-screen-ready' : ''}`} aria-label="Linux system startup" aria-live="polite">
       <div className="boot-console">
-        <div className="boot-brand"><span className="boot-mark">[ VP ]</span><span>VIRAL PRAJAPATI / SYSTEM STARTUP</span></div>
+        <div className="boot-brand"><span className="boot-mark">[ VP ]</span>
+        <span className="boot-mark">VIRAL PRAJAPATI / SYSTEM STARTUP</span></div>
         <div className="boot-lines" ref={linesRef}>
           {bootMessages.slice(0, visibleLines).map((message) => <p key={message}>{message}</p>)}
           {!isComplete && <p className="boot-current"><span className="boot-spinner" /> initramfs: waiting for root device<span className="boot-cursor">_</span></p>}

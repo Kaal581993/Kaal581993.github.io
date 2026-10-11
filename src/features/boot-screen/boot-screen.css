@@ -3,7 +3,7 @@
   z-index: 80;
   inset: 0;
   display: grid;
-  padding: 24px;
+  padding: 14px;
   place-items: center;
   background: #030605;
   color: #9ab59f;
@@ -12,9 +12,9 @@
 }
 
 .boot-screen-ready { pointer-events: none; visibility: hidden; opacity: 0; }
-.boot-console { width: min(780px, 100%); }
+.boot-console { width: clamp(320px, 100%, 1738px) !important; font-size: 1.4em; }
 .boot-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; color: #73917a; font-size: 9px; }
-.boot-mark { color: #00ff41; }
+.boot-mark { color: #00ff41; font-size:2em; font-weight: 500; text-shadow: 0 0 12px rgba(0, 229, 255, 0.45); }
 .boot-lines { max-height: min(620px, calc(100dvh - 220px)); min-height: 245px; overflow: auto; overflow-wrap: anywhere; scrollbar-color: #22572e transparent; scrollbar-width: thin; }
 .boot-lines p { margin: 0 0 8px; animation: boot-line-in 170ms ease-out both; }
 .boot-current { color: #00ffff; }

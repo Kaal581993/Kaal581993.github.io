@@ -71,7 +71,7 @@ export const TerminalWindow = ({ booted }: TerminalWindowProps) => {
       : activePanel === 'resources'
         ? <SystemResources onClose={() => setActivePanel(null)} />
         : null
-  const commandHud = hudCommand && !activePanel
+  const commandHud = hudCommand && !activePanel && (hudCommand.command === 'services' || hudCommand.command === 'contact')
     ? <CommandHUD command={hudCommand.command} result={hudCommand.result} onClose={() => setHudCommand(null)} />
     : null
 

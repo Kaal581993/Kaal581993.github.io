@@ -13,6 +13,10 @@ const toneClass: Record<OutputTone, string> = {
   accent: 'hud-output-accent',
   muted: 'hud-output-muted',
   cyan: 'hud-output-cyan',
+  orange: 'hud-output-orange',
+  yellow: 'hud-output-yellow',
+  amber: 'hud-output-amber',
+  coral: 'hud-output-coral',
 }
 
 export const CommandHUD = ({ command, result, onClose }: CommandHUDProps) => (

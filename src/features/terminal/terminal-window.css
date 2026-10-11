@@ -46,7 +46,7 @@
 .terminal-connection { display: flex; align-items: center; gap: 6px; color: #5b8364; font-size: 8px; }
 .terminal-connection span { width: 5px; height: 5px; border-radius: 50%; background: #00ff41; box-shadow: 0 0 6px #00ff41; }
 
-.terminal-window-content { display: grid; min-height: 0; flex: 1; grid-template-columns: minmax(275px, 0.79fr) minmax(0, 1.21fr); }
+.terminal-window-content { display: grid; min-height: 0; flex: 1; grid-template-columns: minmax(275px, 0.65fr) minmax(0, 1.35fr); }
 .portrait-pane { position: relative; display: flex; min-height: 0; flex-direction: column; padding: 23px 24px 20px; border-right: 1px solid rgba(74, 141, 88, 0.28); background: radial-gradient(ellipse at 50% 42%, rgba(0, 57, 19, 0.23), transparent 62%); }
 .portrait-pane-label, .portrait-caption { display: flex; justify-content: space-between; color: #64866c; font-size: 9px; }
 .portrait-pane-label span:first-child { color: #00ffff; }
