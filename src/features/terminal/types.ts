@@ -1,5 +1,5 @@
 export type OutputTone = 'default' | 'accent' | 'muted' | 'cyan' | 'orange' | 'yellow' | 'amber' | 'coral'
-export type TerminalAction = 'contact' | 'services' | 'resources'
+export type TerminalAction = 'contact' | 'services' | 'resources' | 'voice'
 
 export interface OutputSegment {
   text: string

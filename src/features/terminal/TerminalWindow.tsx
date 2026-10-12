@@ -4,6 +4,7 @@ import { ContactForm } from '../contact/ContactForm'
 import { ProfileLinks } from '../profiles/ProfileLinks'
 import { ServicesCatalog } from '../services-catalog/ServicesCatalog'
 import { SystemResources } from '../system-resources/SystemResources'
+import { VoiceChat } from './components/VoiceChat'
 import { commandNames } from './commandRegistry'
 import { CommandLine } from './components/CommandLine'
 import { CommandHUD } from './components/CommandHUD'
@@ -70,7 +71,9 @@ export const TerminalWindow = ({ booted }: TerminalWindowProps) => {
       ? <ServicesCatalog onClose={() => setActivePanel(null)} />
       : activePanel === 'resources'
         ? <SystemResources onClose={() => setActivePanel(null)} />
-        : null
+        : activePanel === 'voice'
+          ? <VoiceChat onClose={() => setActivePanel(null)} />
+          : null
   const commandHud = hudCommand && !activePanel && (hudCommand.command === 'services' || hudCommand.command === 'contact')
     ? <CommandHUD command={hudCommand.command} result={hudCommand.result} onClose={() => setHudCommand(null)} />
     : null

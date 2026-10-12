@@ -16,6 +16,7 @@ export const commandNames = [
   'hackerrank',
   'resources',
   'services',
+  'voice',
   'clear',
   'contact',
   'sudo',
@@ -54,6 +55,7 @@ export const executeCommand = (input: string): CommandResult => {
           line('profiles    open coding profile links'),
           line('resources   inspect browser runtime resources'),
           line('services    view service estimates'),
+          line('voice       start voice chat with AI sales agent'),
           line('contact     open direct email composer'),
           line('Each information command opens a HUD with the full response.', 'muted'),
           line('clear       clear terminal output'),
@@ -227,6 +229,8 @@ export const executeCommand = (input: string): CommandResult => {
     case 'services':
     case 'service':
       return { delayMs: 120, action: 'services', lines: [line('Loading service estimates…', 'cyan')] }
+    case 'voice':
+      return { delayMs: 120, action: 'voice', lines: [line('Initializing voice agent…', 'cyan')] }
     case 'clear':
       return { clear: true, lines: [] }
     case 'contact':
