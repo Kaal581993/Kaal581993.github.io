@@ -25,10 +25,6 @@ const line = (text: string, tone: OutputTone = 'default'): OutputLine => ({
   segments: [{ text, tone }],
 })
 
-const sectionHeader = (text: string): OutputLine => ({
-  segments: [{ text: `\n${text}`, tone: 'accent' }],
-})
-
 const linkedLine = (label: string, detail: string, href: string): OutputLine => ({
   segments: [
     { text: label, tone: 'accent' },

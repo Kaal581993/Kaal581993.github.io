@@ -12,6 +12,10 @@ const toneClass: Record<OutputTone, string> = {
   accent: 'output-accent',
   muted: 'output-muted',
   cyan: 'output-cyan',
+  orange: 'output-accent',
+  yellow: 'output-accent',
+  amber: 'output-accent',
+  coral: 'output-accent',
 }
 
 export const TerminalOutput = ({ entries, busy }: TerminalOutputProps) => {
